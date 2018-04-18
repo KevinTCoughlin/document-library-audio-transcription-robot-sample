@@ -3,8 +3,12 @@
     <TargetFramework>net461</TargetFramework>
   </PropertyGroup>
   <ItemGroup>    
-    <PackageReference Include="Microsoft.IdentityModel.Clients.ActiveDirectory" Version="3.14.2" />    
-    <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="1.0.2" />
+    <PackageReference Include="Microsoft.Graph" Version="1.8.1" />    
+    <PackageReference Include="Microsoft.Graph.Core" Version="1.8.1" />    
+    <PackageReference Include="Microsoft.IdentityModel.Clients.ActiveDirectory" Version="2.22.302111727" />    
+    <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="1.0.2" />    
+    <PackageReference Include="Microsoft.OneDriveSDK" Version="2.0.7" />    
+    <PackageReference Include="Microsoft.OneDriveSDK.Authentication" Version="1.0.10" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
@@ -16,9 +20,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <None Update="host.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Update="local.settings.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <CopyToPublishDirectory>Never</CopyToPublishDirectory>

@@ -36,6 +36,7 @@ namespace OneDriveDataRobot
     using OneDriveDataRobot.Utils;
     using Models;
     using Controllers;
+    using Microsoft.IdentityModel.Protocols;
 
     public partial class Startup
     {
@@ -52,7 +53,7 @@ namespace OneDriveDataRobot
                     ClientId = SettingsHelper.ClientId,
                     Authority = SettingsHelper.Authority,
                     ClientSecret = SettingsHelper.AppKey,
-                    ResponseType = "code id_token",
+                    ResponseType = OpenIdConnectResponseTypes.CodeIdToken,
                     Resource = "https://graph.microsoft.com",
                     PostLogoutRedirectUri = "/",
                     TokenValidationParameters = new System.IdentityModel.Tokens.TokenValidationParameters

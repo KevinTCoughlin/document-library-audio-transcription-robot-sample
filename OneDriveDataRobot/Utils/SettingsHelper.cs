@@ -30,22 +30,22 @@ namespace OneDriveDataRobot
 
     public class SettingsHelper
     {
-        private static string _clientId = ConfigurationManager.AppSettings["ida:ClientId"];
-        private static string _appKey = ConfigurationManager.AppSettings["ida:ClientSecret"] ?? ConfigurationManager.AppSettings["ida:AppKey"];
+        private static string _clientId = ConfigurationManager.AppSettings.Get("ida:ClientId");
+        private static string _appKey = ConfigurationManager.AppSettings.Get("ida:ClientSecret") ?? ConfigurationManager.AppSettings.Get("ida:AppKey");
 
-        private static string _graphResourceId = ConfigurationManager.AppSettings["ida:GraphResourceId"];
-        private static string _authority = ConfigurationManager.AppSettings["ida:AADInstance"];
+        private static string _graphResourceId = ConfigurationManager.AppSettings.Get("ida:GraphResourceId");
+        private static string _authority = ConfigurationManager.AppSettings.Get("ida:AADInstance");
 
-        private static string _consentUri = _authority + "oauth2/authorize?response_type=code&client_id={0}&resource={1}&redirect_uri={2}";
-        private static string _adminConsentUri = _authority + "oauth2/authorize?response_type=code&client_id={0}&resource={1}&redirect_uri={2}&prompt={3}";
+        private static string _consentUri = Authority1 + "oauth2/authorize?response_type=code&client_id={0}&resource={1}&redirect_uri={2}";
+        private static string _adminConsentUri = Authority1 + "oauth2/authorize?response_type=code&client_id={0}&resource={1}&redirect_uri={2}&prompt={3}";
 
-        private static string _notificationUrl = ConfigurationManager.AppSettings["ida:NotificationUrl"];
+        private static string _notificationUrl = ConfigurationManager.AppSettings.Get("ida:NotificationUrl");
 
         public static string ClientId
         {
             get
             {
-                return _clientId;
+                return ClientId1;
             }
         }
 
@@ -53,7 +53,7 @@ namespace OneDriveDataRobot
         {
             get
             {
-                return _appKey;
+                return AppKey1;
             }
         }
 
@@ -61,7 +61,7 @@ namespace OneDriveDataRobot
         {
             get
             {
-                return _authority;
+                return Authority1;
             }
         }
 
@@ -69,10 +69,16 @@ namespace OneDriveDataRobot
         {
             get
             {
-                return _graphResourceId;
+                return GraphResourceId;
             }
         }
 
-        public static string NotificationUrl { get { return _notificationUrl; } }
+        public static string NotificationUrl { get { return NotificationUrl1; } }
+
+        public static string ClientId1 { get => _clientId; set => _clientId = value; }
+        public static string AppKey1 { get => _appKey; set => _appKey = value; }
+        public static string Authority1 { get => _authority; set => _authority = value; }
+        public static string GraphResourceId { get => _graphResourceId; set => _graphResourceId = value; }
+        public static string NotificationUrl1 { get => _notificationUrl; set => _notificationUrl = value; }
     }
 }
