@@ -47,11 +47,11 @@ namespace DataRobotFunctions
         /// <summary>
         /// These properties should be loaded from a configuration file instead of being hard coded.
         /// </summary>
-        private const string idaClientId = "[ClientId]";
-        private const string idaClientSecret = "[ClientSecret]";
+        private const string idaClientId = "abc";
+        private const string idaClientSecret = "abc";
         private const string idaAuthorityUrl = "https://login.microsoftonline.com/common";
         private const string idaMicrosoftGraphUrl = "https://graph.microsoft.com";
-        private const string speechAPIKey = "[SpeechAPIKey]";
+        private const string speechAPIKey = "abc";
         private const string acceptedAudioFileExtension = ".wav";
 
         /// <summary>

@@ -145,7 +145,7 @@ namespace OneDriveDataRobot.Controllers
                 var authToken = await GetUserAccessTokenSilentAsync(graphBaseUrl);
                 req.Headers.TryAddWithoutValidation("Authorization", $"Bearer {authToken.AccessToken}");
             }));
-            client.BaseUrl = "https://graph.microsoft.com/stagingv1.0";
+            client.BaseUrl = "https://graph.microsoft.com/v1.0/";
             return client;
         }
 
